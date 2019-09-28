@@ -1,5 +1,7 @@
 import re
+#module for carriying out regexp matching
 from random import randint
+#module for working with the replyList
 print (":)*********************************:)")
 
 print("Hello there! Before we begin, I think it would be nice to get your nickname")
@@ -23,11 +25,14 @@ replyList = [
 def palindrome():
 	
 	test = str(input("Enter word here=> ")).strip()
+#obtaining the word from the user
 	if palindrometest(test):
 		print("\nWelldone!", test, "is a palindrome.")
+
 		
 	else:
 		print("\nUnfortunately", test, "is not a palindrome.")
+#validating the word based on the palindrometest function
 		
 		
 	newTrial = str(input("\nwould you like to try again (y/n)? => "))
@@ -39,6 +44,8 @@ def palindrome():
 		print(replyList[randint(0, len(replyList)-6)])
 	else:
 		print(replyList[randint(1, len(replyList) - 5)])
+#just some random manipulation of the list given above.
+#Each item in the list is printed based on the user input.
 	
 
 
@@ -54,18 +61,25 @@ def palindrometest(test):
 		if test[min_index] != test[max_index]:
 			return False
 		min_index += 1
-		max_index -= 1	
+		max_index -= 1
+#while loop which ensures the word is a palindrome		
 
 	pattern = r"/[a-zA-Z]"
+	#The regexp pattern which ensures the user inputs
+	#only alphabets
 	
 
 	if re.match(pattern,test):
 		return True
+#if statement which returns true provided
+#the word(test) satisfies the regexp
 		
 	return True
+#function returns true if it satisfies both requirements
 	
 
 
 palindrome()
+
 
 	   
